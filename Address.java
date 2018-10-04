@@ -1,3 +1,4 @@
+package org.cap.demo;
 
 public class Address {
 
@@ -39,6 +40,11 @@ public class Address {
 	public void setState(String state) {
 		this.state = state;
 	}
+	@Override
+	public String toString() {
+		return "Address [stName=" + stName + ", address=" + address + ", city=" + city + ", state=" + state + "]";
+	}
+	
 	
 	
 }

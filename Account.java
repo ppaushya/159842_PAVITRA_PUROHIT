@@ -1,15 +1,18 @@
-import java.sql.Date;
+package org.cap.demo;
+
+
+import java.time.LocalDate;
 
 public class Account {
 
 	private long accountNo;
-	private String accountType;
-	private Date openingDate;
+	private AccountType accountType;
+	private LocalDate openingDate;
 	private double openingBalance;
 	public Account() {
 		super();
 	}
-	public Account(long accountNo, String accountType, Date openingDate, double openingBalance) {
+	public Account(long accountNo, AccountType accountType, LocalDate openingDate, double openingBalance) {
 		super();
 		this.accountNo = accountNo;
 		this.accountType = accountType;
@@ -22,16 +25,16 @@ public class Account {
 	public void setAccountNo(long accountNo) {
 		this.accountNo = accountNo;
 	}
-	public String getAccountType() {
+	public AccountType getAccountType() {
 		return accountType;
 	}
-	public void setAccountType(String accountType) {
+	public void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
-	public Date getOpeningDate() {
+	public LocalDate getOpeningDate() {
 		return openingDate;
 	}
-	public void setOpeningDate(Date openingDate) {
+	public void setOpeningDate(LocalDate openingDate) {
 		this.openingDate = openingDate;
 	}
 	public double getOpeningBalance() {
@@ -39,6 +42,11 @@ public class Account {
 	}
 	public void setOpeningBalance(double openingBalance) {
 		this.openingBalance = openingBalance;
+	}
+	@Override
+	public String toString() {
+		return "Account [accountNo=" + accountNo + ", accountType=" + accountType + ", openingDate=" + openingDate
+				+ ", openingBalance=" + openingBalance + "]";
 	}
 	
 	

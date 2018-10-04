@@ -1,25 +1,23 @@
-import java.sql.Date;
+package org.cap.demo;
+
+
+import java.time.LocalDate;
 
 public class Transaction {
 
-	int transId;
-	Date transDate;
-	double transAmount;
-	char transType;
-	long accountNo;
-	String accountSummary;
+	private int transId;
+	private LocalDate transDate;
+	private double transAmount;
+	private String transType;
+	private long accountNo;
+	private Account account;
 	public Transaction() {
 		super();
 	}
-	public Transaction(int transId, Date transDate, double transAmount, char transType, long accountNo,
-			String accountSummary) {
-		super();
-		this.transId = transId;
-		this.transDate = transDate;
-		this.transAmount = transAmount;
-		this.transType = transType;
-		this.accountNo = accountNo;
-		this.accountSummary = accountSummary;
+	@Override
+	public String toString() {
+		return "Transaction [transId=" + transId + ", transDate=" + transDate + ", transAmount=" + transAmount
+				+ ", transType=" + transType + ", accountNo=" + accountNo + ", account=" + account + "]";
 	}
 	public int getTransId() {
 		return transId;
@@ -27,10 +25,10 @@ public class Transaction {
 	public void setTransId(int transId) {
 		this.transId = transId;
 	}
-	public Date getTransDate() {
+	public LocalDate getTransDate() {
 		return transDate;
 	}
-	public void setTransDate(Date transDate) {
+	public void setTransDate(LocalDate transDate) {
 		this.transDate = transDate;
 	}
 	public double getTransAmount() {
@@ -39,11 +37,11 @@ public class Transaction {
 	public void setTransAmount(double transAmount) {
 		this.transAmount = transAmount;
 	}
-	public char getTransType() {
+	public String getTransType() {
 		return transType;
 	}
-	public void setTransType(char transType) {
-		this.transType = transType;
+	public void setTransType(String transactionType) {
+		this.transType = transactionType;
 	}
 	public long getAccountNo() {
 		return accountNo;
@@ -51,14 +49,21 @@ public class Transaction {
 	public void setAccountNo(long accountNo) {
 		this.accountNo = accountNo;
 	}
-	public String getAccountSummary() {
-		return accountSummary;
+	public Account getAccount() {
+		return account;
 	}
-	public void setAccountSummary(String accountSummary) {
-		this.accountSummary = accountSummary;
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	public Transaction(int transId, LocalDate transDate, double transAmount,String transType, long accountNo,
+			Account account) {
+		super();
+		this.transId = transId;
+		this.transDate = transDate;
+		this.transAmount = transAmount;
+		this.transType = transType;
+		this.accountNo = accountNo;
+		this.account = account;
 	}
 	
-	
-	
-
 }
